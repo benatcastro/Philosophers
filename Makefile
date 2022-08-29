@@ -1,3 +1,15 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: becastro <becastro@student.42.fr>          +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
+#    Updated: 2022/08/29 21:20:38 by becastro         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME	= philo
 CC		= gcc
 CFLAGS	= -Wall -Wextra -Werror
@@ -11,10 +23,11 @@ INC_DIR	= -I includes/
 SRC_DIR	= src/
 
 all:
-	$(CC) $(CFLAGS) $(INC_DIR)*.c -o $(NAME)
+	$(CC) $(CFLAGS) $(SRC_DIR)*.c $(INC_DIR) -o $(NAME)
 
 sanitize:
-	$(CC) $(CFLAGS) $(SANITIZE) $(INC_DIR)*.c -o $(NAME)
+	$(CC) $(CFLAGS) $(SRC_DIR) $(SANITIZE) $(INC_DIR)*.c -o $(NAME)
+
 
 valgrind:
 	@$(VALGRIND) ./NAME
@@ -22,10 +35,5 @@ valgrind:
 run:
 	@./$(NAME)
 
-clean:
 
-fclean:
 
-re:
-
-.PHONY all sanitize valgrind run clean fclean
