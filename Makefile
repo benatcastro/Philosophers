@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: becastro <becastro@student.42.fr>          +#+  +:+       +#+         #
+#    By: bena <bena@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/08/29 21:20:38 by becastro         ###   ########.fr        #
+#    Updated: 2022/08/30 23:39:01 by bena             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,16 +23,15 @@ INC_DIR	= -I includes/
 SRC_DIR	= src/
 
 all:
-	$(CC) $(CFLAGS) $(SRC_DIR)*.c $(INC_DIR) -o $(NAME)
+	@$(CC) $(CFLAGS) $(SRC_DIR)*.c $(INC_DIR) -o $(NAME)
 
 sanitize:
-	$(CC) $(CFLAGS) $(SRC_DIR) $(SANITIZE) $(INC_DIR)*.c -o $(NAME)
-
+	@$(CC) $(CFLAGS) $(SRC_DIR) $(SANITIZE) $(INC_DIR)*.c -o $(NAME)
 
 valgrind:
 	@$(VALGRIND) ./NAME
 
-run:
+run: all
 	@./$(NAME)
 
 
