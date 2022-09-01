@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:59:02 by bena              #+#    #+#             */
-/*   Updated: 2022/09/01 08:06:22 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 10:04:40 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_isdigit(int arg)
 {
 	if (arg >= '0' && arg <= '9')
-		return (arg);
+		return (true);
 	else
-		return (0);
+		return (false);
 }
 
 int	ft_atoi(const char *nptr)

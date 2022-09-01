@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:35:35 by bena              #+#    #+#             */
-/*   Updated: 2022/09/01 09:06:28 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 09:14:16 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@ int	main(int argc, char **argv)
 	pthread_t	thread_var;
 
 	(void)thread_var;
-	ft_check_args(argc, argv);
+	if (!ft_check_args(argc, argv, &data))
+		return (1);
 	pthread_create(&thread_var, NULL, get_time, &data);
 	while (true)
 	{
