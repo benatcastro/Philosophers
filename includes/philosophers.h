@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/09/01 07:47:16 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 08:15:30 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,14 @@
 # include <unistd.h>
 
 # define T_USLEEP 50
+enum e_args
+{
+	N_PHILO,
+	N_EATS,
+	TT_DIE,
+	TT_EAT,
+	TT_SLEEP,
+};
 
 typedef struct s_data
 {
@@ -35,6 +43,16 @@ typedef struct s_philo
 	struct s_philo	*next;
 }	t_philo;
 
-void	ft_usleep(u_int32_t msec);
+/********LIBFT UTILS***************/
 
+int		ft_isdigit(int arg);
+int		ft_atoi(const char *nptr);
+/********TIME FNCS***************/
+
+void	ft_usleep(u_int32_t msec);
+void	*get_time(void *ptr_data);
+
+/***********ARGS*************/
+
+void	ft_check_args(int argc, char **argv);
 #endif

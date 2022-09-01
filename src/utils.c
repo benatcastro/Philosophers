@@ -6,24 +6,11 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:59:02 by bena              #+#    #+#             */
-/*   Updated: 2022/09/01 07:43:30 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 08:06:22 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
-
-void	ft_usleep(u_int32_t msec)
-{
-	int	i;
-	int	iters;
-
-	i = -1;
-	iters = msec / T_USLEEP;
-	while (++i < iters)
-		usleep(T_USLEEP);
-	if (msec % T_USLEEP)
-		usleep(msec % T_USLEEP);
-}
 
 int	ft_isdigit(int arg)
 {
