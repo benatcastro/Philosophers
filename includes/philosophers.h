@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/09/01 10:16:13 by becastro         ###   ########.fr       */
+/*   Updated: 2022/09/01 11:20:20 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <sys/time.h>
 # include <stdbool.h>
 # include <unistd.h>
+# include <strings.h>
 
 # define T_USLEEP 50
 
@@ -31,6 +32,7 @@ typedef struct s_data
 	u_int32_t	tt_sleep;
 	u_int32_t	need_to_eat;
 	bool		must_eat;
+	t_philo		**philo_general;
 }	t_data;
 typedef struct s_philo
 {
