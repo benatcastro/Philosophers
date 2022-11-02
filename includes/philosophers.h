@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/09/01 11:20:20 by becastro         ###   ########.fr       */
+/*   Updated: 2022/11/02 21:10:36 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,7 @@ typedef struct s_philo
 	bool			l_fork;
 	bool			r_fork;
 	struct s_philo	*next;
+	struct s_philo	*before;
 }	t_philo;
 
 /********LIBFT UTILS***************/
@@ -54,4 +55,7 @@ void	*get_time(void *ptr_data);
 /***********ARGS*************/
 
 bool	ft_check_args(int argc, char **argv, t_data *data);
+
+/***********NODES*************/
+void	philo_add(t_philo **head, t_philo *node);
 #endif

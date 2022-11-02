@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:59:02 by bena              #+#    #+#             */
-/*   Updated: 2022/09/01 10:04:40 by becastro         ###   ########.fr       */
+/*   Updated: 2022/11/02 21:09:32 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,24 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (nbr * sign);
+}
+
+void	philo_add(t_philo **head, t_philo *node)
+{
+	t_philo	*aux;
+
+	if (node)
+	{
+		if (!*head)
+		{
+			(*head) = node;
+			node->next = node;
+			node->before = node;
+			return ;
+		}
+		aux = node;
+		while (aux && aux->next->id)
+			aux = aux->next;
+		aux->next = node;
+	}
 }
