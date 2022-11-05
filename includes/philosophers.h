@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/11/02 21:10:36 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/05 20:23:42 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,6 @@ typedef struct s_data
 	u_int32_t	tt_sleep;
 	u_int32_t	need_to_eat;
 	bool		must_eat;
-	t_philo		**philo_general;
 }	t_data;
 typedef struct s_philo
 {
