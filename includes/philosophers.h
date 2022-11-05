@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/11/05 21:36:26 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/05 23:17:54 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <sys/time.h>
 # include <stdbool.h>
 # include <unistd.h>
-# include <strings.h>
+# include <string.h>
 
 # define T_USLEEP 50
 
@@ -39,5 +39,6 @@ void	*get_time(void *ptr_data);
 bool	ft_check_args(int argc, char **argv, t_data *data);
 /*********PHILO LOGIC*******/
 
-void	ft_init_philos(t_data *data)
+void	ft_init_philos(t_data *data);
+void	print_philos(t_data *data);
 #endif

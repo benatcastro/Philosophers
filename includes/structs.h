@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/11/05 21:24:54 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/05 23:06:58 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,21 @@
 # include <stdlib.h>
 # include <stdbool.h>
 
+enum e_status
+{
+	EATING,
+	SLEEPING,
+	THINKING,
+	TEST,
+};
+
 /********STRUCTS*****/
 typedef struct s_philo
 {
 	u_int32_t		id;
 	bool			l_fork;
 	bool			r_fork;
+	u_int16_t		status;
 	struct s_philo	*next;
 	struct s_philo	*prev;
 }	t_philo;

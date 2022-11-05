@@ -6,13 +6,13 @@
 #    By: bena <bena@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/11/05 21:26:34 by bena             ###   ########.fr        #
+#    Updated: 2022/11/05 23:16:18 by bena             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= philosophers
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror $(SANITIZE)
 
 #debug
 VALGRIND = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
@@ -28,6 +28,7 @@ SRC_FILES =	args \
 			main \
 			time \
 			utils \
+			nodes \
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
