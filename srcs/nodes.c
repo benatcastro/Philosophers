@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:58:15 by bena              #+#    #+#             */
-/*   Updated: 2022/11/05 23:24:31 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/05 23:38:49 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,11 @@ t_philo	*ft_philolast(t_philo *lst)
 {
 	if (!lst)
 		return (NULL);
-	while (lst->next || lst->id == 0)
+	while (lst->next && lst->next->id != 1)
+	{
+		printf("(%d)\n", lst->id);
 		lst = lst->next;
+	}
 	return (lst);
 }
 
