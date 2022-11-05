@@ -6,13 +6,14 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/11/05 20:59:08 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/05 21:05:40 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILOSOPHERS_H
 # define PHILOSOPHERS_H
 
+#include "structs.h"
 # include <pthread.h>
 # include <stdio.h>
 # include <stdlib.h>
