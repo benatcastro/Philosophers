@@ -6,12 +6,13 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:58:15 by bena              #+#    #+#             */
-/*   Updated: 2022/11/05 21:24:06 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/05 21:34:12 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "nodes.h"
 #include "structs.h"
+#include <string.h>
 
 t_philo	*ft_philolast(t_philo *lst)
 {
@@ -31,4 +32,13 @@ void	ft_philoadd_back(t_philo **lst, t_philo *new)
 		new->prev = ft_philolast(*lst);
 		ft_philolast(*lst)->next = new;
 	}
+}
+
+t_philo	*create_philo_node(u_int32_t id)
+{
+	t_philo	*node;
+
+	node = malloc(sizeof(t_philo));
+	memset(node, 0, sizeof(t_philo));
+	node->id = id;
 }

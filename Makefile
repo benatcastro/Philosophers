@@ -6,7 +6,7 @@
 #    By: bena <bena@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/11/05 21:04:23 by bena             ###   ########.fr        #
+#    Updated: 2022/11/05 21:26:34 by bena             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,7 +47,7 @@ clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
 

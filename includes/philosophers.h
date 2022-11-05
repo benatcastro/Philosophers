@@ -6,14 +6,14 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/11/05 21:05:40 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/05 21:36:26 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILOSOPHERS_H
 # define PHILOSOPHERS_H
 
-#include "structs.h"
+# include "structs.h"
 # include <pthread.h>
 # include <stdio.h>
 # include <stdlib.h>
@@ -37,7 +37,7 @@ void	*get_time(void *ptr_data);
 /***********ARGS*************/
 
 bool	ft_check_args(int argc, char **argv, t_data *data);
+/*********PHILO LOGIC*******/
 
-/***********NODES*************/
-void	philo_add(t_philo **head, t_philo *node);
+void	ft_init_philos(t_data *data)
 #endif
