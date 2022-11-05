@@ -6,7 +6,7 @@
 #    By: bena <bena@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/11/05 20:55:36 by bena             ###   ########.fr        #
+#    Updated: 2022/11/05 21:04:23 by bena             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,13 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(INC_FLAG) -c $< -o $@
 
+clean:
+	rm -rf $(OBJ_DIR)
+
+fclean: clean
+	rm $(NAME)
+
+re: fclean all
 
 sanitize:
 	@$(CC) $(CFLAGS) $(SRC_DIR) $(SANITIZE) $(INC_DIR)*.c -o $(NAME)
@@ -53,5 +60,5 @@ valgrind:
 run: all
 	@./$(NAME)
 
-
+.PHONY: all clean fclean re valgrin run
 
