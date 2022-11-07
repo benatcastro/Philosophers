@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:58:15 by bena              #+#    #+#             */
-/*   Updated: 2022/11/05 23:38:49 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/07 09:03:24 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	print_philos(t_data *data)
 	aux = (*data->lst_head);
 	while (aux)
 	{
-		printf("(%d) Philo: (%d)", data->time, aux->id);
+		printf("(%d) Philo: (%d)", get_time(), aux->id);
 		if (aux->status == TEST)
-			printf("<TEST>\n");
+			printf(" <TEST>\n");
 		ft_usleep(100000);
 		aux = aux->next;
 	}
@@ -33,12 +33,16 @@ void	print_philos(t_data *data)
 
 t_philo	*ft_philolast(t_philo *lst)
 {
+	u_int32_t	start_id;
+
 	if (!lst)
 		return (NULL);
-	while (lst->next && lst->next->id != 1)
+	start_id = lst->id;
+	while (lst->next)
 	{
-		printf("(%d)\n", lst->id);
 		lst = lst->next;
+		if (start_id == lst->id)
+			break ;
 	}
 	return (lst);
 }
@@ -54,13 +58,14 @@ void	ft_philoadd_back(t_philo **lst, t_philo *new)
 	}
 }
 
-t_philo	*create_philo_node(u_int32_t id)
+t_philo	*create_philo_node(u_int32_t id, t_times tv)
 {
 	t_philo	*node;
 
 	node = malloc(sizeof(t_philo));
 	memset(node, 0, sizeof(t_philo));
 	node->id = id;
+	node->tv = tv;
 	node->status = TEST;
 	return (node);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:04:57 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 08:05:13 by becastro         ###   ########.fr       */
+/*   Updated: 2022/11/07 09:00:12 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,25 +29,17 @@ void	ft_usleep(u_int32_t msec)
  * @brief Updates the time in the data structure every milisec
  * @param data -> data struct
  */
-void	*get_time(void *ptr_data)
+u_int32_t	get_time(void)
 {
-	struct timeval	time;
-	static bool		check;
-	u_int32_t		tmp;
-	t_data			*data;
+	struct timeval		time;
+	static bool			check;
+	static u_int32_t	tmp;
 
-	check = false;
-	data = ptr_data;
-	(void)time;
-	while (true)
+	gettimeofday(&time, NULL);
+	if (!check)
 	{
-		gettimeofday(&time, NULL);
-		if (!check)
-		{
-			tmp = (time.tv_sec * 1000 + time.tv_usec / 1000);
-			check = true;
-		}
-		data->time = (time.tv_sec * 1000 + time.tv_usec / 1000) - tmp;
+		tmp = (time.tv_sec * 1000 + time.tv_usec / 1000);
+		check = true;
 	}
-	return (NULL);
+	return ((time.tv_sec * 1000 + time.tv_usec / 1000) - tmp);
 }

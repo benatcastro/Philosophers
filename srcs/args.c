@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   args.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:09:42 by becastro          #+#    #+#             */
-/*   Updated: 2022/09/01 11:08:46 by becastro         ###   ########.fr       */
+/*   Updated: 2022/11/07 06:25:20 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 static void	ft_declare_values(char **argv, t_data *data, bool need_eat)
 {
 	data->n_philos = ft_atoi(argv[1]);
-	data->tt_die = ft_atoi(argv[2]);
-	data->tt_eat = ft_atoi(argv[3]);
-	data->tt_sleep = ft_atoi(argv[4]);
+	data->data_tv.tt_die = ft_atoi(argv[2]);
+	data->data_tv.tt_eat = ft_atoi(argv[3]);
+	data->data_tv.tt_sleep = ft_atoi(argv[4]);
 	if (need_eat)
 	{
 		data->must_eat = true;
-		data->need_to_eat = ft_atoi(argv[5]);
+		data->eat_times = ft_atoi(argv[5]);
 	}
 }
 
@@ -52,10 +52,7 @@ bool	ft_check_args(int argc, char **argv, t_data *data)
 	bool		must_eat;
 
 	if (argc != 5 && argc != 6)
-	{
-		printf("Error, invalid arg count ❌\n");
-		return (false);
-	}
+		return (printf("Error, invalid arg count ❌\n"), false);
 	if (argc == 6)
 		must_eat = true;
 	else

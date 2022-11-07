@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/11/05 23:17:54 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/07 09:01:29 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,18 +27,18 @@
 
 /********LIBFT UTILS***************/
 
-int		ft_isdigit(int arg);
-int		ft_atoi(const char *nptr);
+int			ft_isdigit(int arg);
+int			ft_atoi(const char *nptr);
 /********TIME FNCS***************/
 
-void	ft_usleep(u_int32_t msec);
-void	*get_time(void *ptr_data);
+void		ft_usleep(u_int32_t msec);
+u_int32_t	get_time(void);
 
 /***********ARGS*************/
 
-bool	ft_check_args(int argc, char **argv, t_data *data);
+bool		ft_check_args(int argc, char **argv, t_data *data);
 /*********PHILO LOGIC*******/
 
-void	ft_init_philos(t_data *data);
-void	print_philos(t_data *data);
+void		ft_init_philos(t_data *data);
+void		print_philos(t_data *data);
 #endif
