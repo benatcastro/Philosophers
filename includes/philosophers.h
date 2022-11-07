@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/11/07 09:01:29 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/07 09:23:02 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ u_int32_t	get_time(void);
 bool		ft_check_args(int argc, char **argv, t_data *data);
 /*********PHILO LOGIC*******/
 
-void		ft_init_philos(t_data *data);
+void		init_philos(t_data *data);
 void		print_philos(t_data *data);
+void		*init_routine(void *philosopher);
 #endif

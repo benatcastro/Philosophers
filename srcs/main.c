@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:35:35 by bena              #+#    #+#             */
-/*   Updated: 2022/11/07 09:02:44 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/07 09:41:38 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int	main(int argc, char **argv)
 	data.lst_head = NULL;
 	if (!ft_check_args(argc, argv, &data))
 		exit (EXIT_FAILURE);
-	ft_init_philos(&data);
-	print_philos(&data);
+	init_philos(&data);
+	while (true)
+		pause();
+	// print_philos(&data);
 }
