@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/11/07 09:23:02 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/07 20:44:24 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,6 @@ bool		ft_check_args(int argc, char **argv, t_data *data);
 void		init_philos(t_data *data);
 void		print_philos(t_data *data);
 void		*init_routine(void *philosopher);
+void		print_philo_status(t_philo *philo);
+void		*times_eaten_checker(void *data_ptr);
 #endif

@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:58:15 by bena              #+#    #+#             */
-/*   Updated: 2022/11/07 09:03:24 by bena             ###   ########.fr       */
+/*   Updated: 2022/11/07 20:18:16 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string.h>
 #include <stdio.h>
 
-void	print_philos(t_data *data)
+/*void	print_philos(t_data *data)
 {
 	t_philo	*aux;
 
@@ -29,7 +29,7 @@ void	print_philos(t_data *data)
 		ft_usleep(100000);
 		aux = aux->next;
 	}
-}
+}*/
 
 t_philo	*ft_philolast(t_philo *lst)
 {
@@ -58,14 +58,15 @@ void	ft_philoadd_back(t_philo **lst, t_philo *new)
 	}
 }
 
-t_philo	*create_philo_node(u_int32_t id, t_times tv)
+t_philo	*create_philo_node(u_int32_t id, t_data *data)
 {
 	t_philo	*node;
 
 	node = malloc(sizeof(t_philo));
 	memset(node, 0, sizeof(t_philo));
 	node->id = id;
-	node->tv = tv;
+	node->tv = data->data_tv;
+	node->g_data = data;
 	node->status = TEST;
 	return (node);
 }
