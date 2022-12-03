@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   routines.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/11/07 20:54:19 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/03 21:32:06 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ void	print_philo_status(t_philo *philo)
 
 void	philo_eat(t_philo *philo)
 {
-	ft_usleep(philo->tv.tt_eat);
+	ft_usleep(philo->tv->tt_eat);
 	philo->status = EATING;
-	philo->tv.t_eaten++;
+	philo->tv->t_eaten++;
 	print_philo_status(philo);
 }
 
 void	philo_sleep(t_philo *philo)
 {
-	ft_usleep(philo->tv.tt_sleep);
+	ft_usleep(philo->tv->tt_sleep);
 	philo->status = SLEEPING;
 	print_philo_status(philo);
 }

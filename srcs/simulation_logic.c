@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_logic.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/11/07 21:08:05 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/03 21:32:14 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	*times_eaten_checker(void *data_ptr)
 	counter = 0;
 	while (aux && (counter != data->n_philos))
 	{
-		if (aux->tv.t_eaten == data->eat_times)
+		if (aux->tv->t_eaten == data->eat_times)
 			counter++;
 		else
 			counter = 0;

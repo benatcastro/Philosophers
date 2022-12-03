@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/11/07 21:04:30 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/03 21:31:07 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ typedef struct s_philo
 	bool			l_fork;
 	bool			r_fork;
 	struct s_data	*g_data;
-	struct s_times	tv;
+	struct s_times	*tv;
 	struct s_philo	*next;
 	struct s_philo	*prev;
 }	t_philo;
