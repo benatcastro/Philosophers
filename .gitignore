@@ -50,5 +50,7 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+#42utils
 philosophers
+philo
 .vscode
