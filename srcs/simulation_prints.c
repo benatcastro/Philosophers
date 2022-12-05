@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/05 16:43:49 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 17:27:28 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,18 @@ void	print_philo_status(t_philo *philo)
 	pthread_mutex_unlock(&philo->g_data->printing);
 }
 
-void	print_simulation_state(t_data *data)
+void	print_simulation_state(t_data *data, t_philo *philo)
 {
+	pthread_mutex_lock(&data->printing);
 	if (data->simulation_state == PHILO_EATEN)
 	{
-		pthread_mutex_lock(&data->printing);
 		printf("Simulation ended, all philos have eaten %d times\n",
 			data->eat_times);
+		data->sim_running = false;
+	}
+	if (data->simulation_state == PHILO_DIED)
+	{
+		printf("Simulation ended, philo %d died\n", philo->id);
 		data->sim_running = false;
 	}
 }

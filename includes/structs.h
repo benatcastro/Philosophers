@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/05 16:07:13 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 17:48:59 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,10 @@ typedef struct s_philo
 {
 	u_int32_t		id;
 	pthread_t		th_id;
-	u_int16_t		status;
+	int32_t			last_eat;
+	u_int8_t		status;
 	bool			finished_eaten;
-	bool			l_fork;
-	bool			r_fork;
+	pthread_mutex_t	fork;
 	struct s_data	*g_data;
 	struct s_times	*tv;
 	struct s_philo	*next;
@@ -60,12 +60,12 @@ typedef struct s_data
 	u_int32_t		n_philos;
 	u_int32_t		eaten_philos;
 	uint8_t			simulation_state;
+	bool			must_eat;
+	bool			sim_running;
 	struct s_philo	**philo_lst;
 	struct s_times	*data_tv;
-	bool			must_eat;
 	u_int32_t		eat_times;
 	pthread_mutex_t	printing;
-	bool			sim_running;
 }	t_data;
 
 #endif

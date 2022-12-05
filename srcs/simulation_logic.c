@@ -6,16 +6,32 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/05 17:16:30 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 17:42:28 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-// bool	death_checker()
-// {
+void	*death_checker(void *data_ptr)
+{
+	t_data	*data;
+	t_philo	*aux;
 
-// }
+	data = data_ptr;
+	aux = (*data->philo_lst);
+	while (aux)
+	{
+		if ((aux->last_eat - get_time()) >= data->data_tv->tt_die)
+		{
+			// printf("last_eat: %llu time diff: %llu tt_die:%d\n",aux->last_eat, aux->last_eat - get_time(), data->data_tv->tt_die);
+			break ;
+		}
+		aux = aux->next;
+	}
+	data->simulation_state = PHILO_DIED;
+	print_simulation_state(data, aux);
+	return (NULL);
+}
 
 void	*times_eaten_checker(void *data_ptr)
 {
@@ -40,7 +56,7 @@ void	*times_eaten_checker(void *data_ptr)
 		aux = aux->next;
 	}
 	data->simulation_state = PHILO_EATEN;
-	print_simulation_state(data);
+	print_simulation_state(data, NULL);
 	return (NULL);
 }
 
