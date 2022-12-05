@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_prints.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/05 17:27:28 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 00:07:10 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	print_simulation_state(t_data *data, t_philo *philo)
 	}
 	if (data->simulation_state == PHILO_DIED)
 	{
-		printf("Simulation ended, philo %d died\n", philo->id);
+		printf("Simulation ended, philo %d died at %d\n", philo->id, get_time());
 		data->sim_running = false;
 	}
 }

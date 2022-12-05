@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/05 17:48:59 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:44:03 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ typedef struct s_data
 {
 	u_int32_t		n_philos;
 	u_int32_t		eaten_philos;
-	uint8_t			simulation_state;
+	u_int8_t		simulation_state;
 	bool			must_eat;
 	bool			sim_running;
 	struct s_philo	**philo_lst;

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_logic.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/05 17:42:28 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 23:54:28 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,7 @@ void	*death_checker(void *data_ptr)
 	while (aux)
 	{
 		if ((aux->last_eat - get_time()) >= data->data_tv->tt_die)
-		{
-			// printf("last_eat: %llu time diff: %llu tt_die:%d\n",aux->last_eat, aux->last_eat - get_time(), data->data_tv->tt_die);
 			break ;
-		}
 		aux = aux->next;
 	}
 	data->simulation_state = PHILO_DIED;
@@ -43,7 +40,7 @@ void	*times_eaten_checker(void *data_ptr)
 	philo_counter = data->n_philos;
 	aux = (*data->philo_lst);
 	if (!data->must_eat)
-		exit(EXIT_FAILURE);
+		return (NULL);
 	while (aux)
 	{
 		if (aux->tv->t_eaten >= data->eat_times && !aux->finished_eaten)
@@ -70,6 +67,6 @@ void	stop_threads(t_philo **head)
 		pthread_join(aux->th_id, NULL);
 		aux = aux->next;
 		if (aux == (*head))
-			return ;
+			exit(0);
 	}
 }
