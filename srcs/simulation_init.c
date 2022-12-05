@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init_philos.c                                      :+:      :+:    :+:   */
+/*   simulation_init.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:10:41 by becastro          #+#    #+#             */
-/*   Updated: 2022/11/07 21:05:03 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/05 14:37:30 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 void	init_treadhs(t_philo **head, t_data *data)
 {
-	t_philo	*aux;
+	t_philo		*aux;
+	pthread_t	eatean_th;
 
 	aux = (*head);
 	while (aux)
@@ -26,6 +27,8 @@ void	init_treadhs(t_philo **head, t_data *data)
 		if (aux == (*head))
 			break ;
 	}
+	if (data->must_eat)
+		pthread_create(&eatean_th, NULL, times_eaten_checker, (void *)data);
 	pthread_mutex_init(&data->printing, NULL);
 }
 

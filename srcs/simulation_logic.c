@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/03 21:32:14 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 14:39:14 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ void	*times_eaten_checker(void *data_ptr)
 			counter = 0;
 		aux = aux->next;
 	}
-	printf("Simulation ended all philosphers haave eaten %d times\n",
-		data->eat_times);
+	data->simulation_state = PHILO_EATEN;
+	print_simulation_state(data);
 	exit(EXIT_SUCCESS);
 	//data->sim_running = false;
 	return (NULL);

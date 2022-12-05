@@ -6,7 +6,7 @@
 #    By: becastro <becastro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/12/03 21:22:33 by becastro         ###   ########.fr        #
+#    Updated: 2022/12/05 14:29:00 by becastro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,14 @@ SRC_DIR	= srcs/
 OBJ_DIR = objs/
 INC_FLAG = -I $(INC_DIR)
 SRC_FILES =	args \
-			init_philos \
 			main \
 			time \
 			utils \
 			nodes \
-			routines \
+			simulation_routines \
 			simulation_logic \
+			simulation_init \
+			simulation_prints \
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

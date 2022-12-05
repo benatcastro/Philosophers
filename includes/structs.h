@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/03 21:31:07 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 14:37:04 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,13 @@ enum e_status
 	SLEEPING,
 	THINKING,
 	TEST,
+};
+
+enum e_sim_states
+{
+	DEF_RUNNING,
+	PHILO_DIED,
+	PHILO_EATEN,
 };
 
 /********STRUCTS*****/
@@ -49,8 +56,8 @@ typedef struct s_philo
 }	t_philo;
 typedef struct s_data
 {
-
 	u_int32_t		n_philos;
+	uint8_t			simulation_state;
 	struct s_philo	**philo_lst;
 	struct s_times	data_tv;
 	bool			must_eat;
@@ -58,6 +65,5 @@ typedef struct s_data
 	pthread_mutex_t	printing;
 	bool			sim_running;
 }	t_data;
-
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/11/07 20:44:24 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/05 14:34:09 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ u_int32_t	get_time(void);
 bool		ft_check_args(int argc, char **argv, t_data *data);
 /*********PHILO LOGIC*******/
 
+void		print_simulation_state(t_data *data);
+void		print_philo_status(t_philo *philo);
 void		init_philos(t_data *data);
 void		print_philos(t_data *data);
 void		*init_routine(void *philosopher);
