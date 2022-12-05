@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:35:35 by bena              #+#    #+#             */
-/*   Updated: 2022/12/05 16:41:30 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 17:00:31 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ int	main(int argc, char **argv)
 	init_philos(&data);
 	// printf("Test %d\n", data.n_philos);
 	while (data.sim_running)
-		pause();
+		ft_usleep(1);
+	stop_threads(data.philo_lst);
 	exit(0);
 }
