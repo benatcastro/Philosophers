@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:58:15 by bena              #+#    #+#             */
-/*   Updated: 2022/12/03 21:31:29 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 15:41:36 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,11 @@ t_philo	*create_philo_node(u_int32_t id, t_data *data)
 	node = malloc(sizeof(t_philo));
 	memset(node, 0, sizeof(t_philo));
 	node->id = id;
-	node->tv = &data->data_tv;
+	node->tv = data->data_tv;
 	node->g_data = data;
+	node->finished_eaten = false;
 	node->status = TEST;
+	node->tv->t_eaten = 0;
 	return (node);
 }
 

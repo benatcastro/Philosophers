@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/05 14:37:57 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/05 16:30:36 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ void	*init_routine(void *philosopher)
 	t_philo	*philo;
 
 	philo = philosopher;
-	while (true)
+	while (philo->g_data->sim_running)
 	{
 		philo_eat(philo);
 		philo_sleep(philo);
+		// ft_usddleep(100000);
 	}
 	return (NULL);
 }
