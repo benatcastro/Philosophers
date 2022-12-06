@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_routines.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 18:30:38 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 22:14:25 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,8 @@ void	philo_eat(t_philo *philo)
 	}
 	philo->last_eat = get_time();
 	philo->status = EATING;
-	ft_usleep(philo->tv->tt_eat);
 	philo->t_eaten++;
+	ft_usleep(philo->tv->tt_eat);
 	print_philo_status(philo);
 	pthread_mutex_unlock(&philo->fork);
 	pthread_mutex_unlock(&philo->prev->fork);

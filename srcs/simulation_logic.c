@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_logic.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 18:38:19 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 22:13:39 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,9 @@ void	*death_checker(void *data_ptr)
 			break ;
 		aux = aux->next;
 	}
+	// printf("Dead condition: %d\n", -(aux->last_eat - get_time()));
 	data->simulation_state = PHILO_DIED;
 	print_simulation_state(data, aux);
-	while (1)
-		continue;
 	return (NULL);
 }
 

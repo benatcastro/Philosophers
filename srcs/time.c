@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:04:57 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/06 15:16:38 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 22:12:43 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,19 +14,11 @@
 
 void	ft_usleep(u_int32_t msec)
 {
-	int	i;
-	int	iters;
-
-	i = -1;
-	iters = msec / T_USLEEP;
-	while (++i < iters)
-		usleep(T_USLEEP);
-	if (msec % T_USLEEP)
-		usleep(msec % T_USLEEP);
+	return ((void)usleep(msec * 10));
 }
 
 /**
- * @brief Updates the time in the data structure every milisec
+ * @brief Returns the current timestamp
  * @param data -> data struct
  */
 int32_t	get_time(void)
