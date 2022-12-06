@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_prints.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/06 00:07:10 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/06 15:14:36 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	print_philo_status(t_philo *philo)
 		printf("is eating\n");
 	else if (philo->status == SLEEPING)
 		printf("is sleeping\n");
+	else if (philo->status == THINKING)
+		printf("is thinking\n");
 	pthread_mutex_unlock(&philo->g_data->printing);
 }
 
@@ -40,4 +42,5 @@ void	print_simulation_state(t_data *data, t_philo *philo)
 		printf("Simulation ended, philo %d died at %d\n", philo->id, get_time());
 		data->sim_running = false;
 	}
+	exit(EXIT_SUCCESS);
 }
