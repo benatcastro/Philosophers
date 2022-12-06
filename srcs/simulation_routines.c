@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 18:17:34 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:30:38 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,6 @@ void	*init_routine(void *philosopher)
 	philo = philosopher;
 	while (philo->g_data->sim_running)
 	{
-		fprintf(stderr, "routine starts\n");
 		philo_eat(philo);
 		philo_sleep(philo);
 	}

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 18:24:19 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:38:19 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ void	*death_checker(void *data_ptr)
 	}
 	data->simulation_state = PHILO_DIED;
 	print_simulation_state(data, aux);
+	while (1)
+		continue;
 	return (NULL);
 }
 
