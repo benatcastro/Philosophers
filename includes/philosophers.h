@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 16:55:22 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:20:03 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@
 
 /********LIBFT UTILS***************/
 
+void		print_list(t_philo **head);
 int			ft_isdigit(int arg);
 int			ft_atoi(const char *nptr);
 /********TIME FNCS***************/

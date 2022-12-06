@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 17:31:17 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:24:19 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ void	*times_eaten_checker(void *data_ptr)
 			break ;
 		aux = aux->next;
 	}
-	aux = (*data->philo_lst);
 	data->simulation_state = PHILO_EATEN;
 	print_simulation_state(data, NULL);
 	return (NULL);

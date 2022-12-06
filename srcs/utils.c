@@ -6,11 +6,23 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:59:02 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 17:49:59 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 18:19:50 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
+
+void	print_list(t_philo **head)
+{
+	t_philo	*aux;
+
+	aux = (*head);
+	while (aux)
+	{
+		printf("id: %d\n", aux->id);
+		aux = aux->next;
+	}
+}
 
 int	ft_isdigit(int arg)
 {
