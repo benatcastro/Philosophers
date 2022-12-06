@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/06 15:14:36 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:42:37 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ void	print_philo_status(t_philo *philo)
 		return ;
 	printf("%d %d ", get_time(), philo->id);
 	if (philo->status == EATING)
+	{
 		printf("is eating\n");
+	}
 	else if (philo->status == SLEEPING)
 		printf("is sleeping\n");
 	else if (philo->status == THINKING)
@@ -39,7 +41,8 @@ void	print_simulation_state(t_data *data, t_philo *philo)
 	}
 	if (data->simulation_state == PHILO_DIED)
 	{
-		printf("Simulation ended, philo %d died at %d\n", philo->id, get_time());
+		printf("Simulation ended, philo %d died at time %d\n",
+			philo->id, get_time());
 		data->sim_running = false;
 	}
 	exit(EXIT_SUCCESS);

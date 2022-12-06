@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:09:42 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/05 15:39:31 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:29:46 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ static void	ft_declare_values(char **argv, t_data *data, bool need_eat)
 	data->data_tv->tt_die = ft_atoi(argv[2]);
 	data->data_tv->tt_eat = ft_atoi(argv[3]);
 	data->data_tv->tt_sleep = ft_atoi(argv[4]);
-
 	if (need_eat)
 	{
 		data->must_eat = true;

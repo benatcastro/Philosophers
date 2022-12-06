@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 15:17:16 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:44:01 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*death_checker(void *data_ptr)
 	aux = (*data->philo_lst);
 	while (aux)
 	{
-		if ((aux->last_eat - get_time()) >= (int64_t)data->data_tv->tt_die)
+		if (-(aux->last_eat - get_time()) >= data->data_tv->tt_die)
 			break ;
 		aux = aux->next;
 	}
@@ -43,7 +43,7 @@ void	*times_eaten_checker(void *data_ptr)
 		return (NULL);
 	while (aux)
 	{
-		if (aux->tv->t_eaten >= data->eat_times && !aux->finished_eaten)
+		if (aux->t_eaten == data->eat_times && !aux->finished_eaten)
 		{
 			aux->finished_eaten = true;
 			data->eaten_philos++;
@@ -52,6 +52,7 @@ void	*times_eaten_checker(void *data_ptr)
 			break ;
 		aux = aux->next;
 	}
+	aux = (*data->philo_lst);
 	data->simulation_state = PHILO_EATEN;
 	print_simulation_state(data, NULL);
 	return (NULL);

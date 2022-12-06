@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 15:18:37 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:41:08 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,6 @@ typedef struct s_times
 	int32_t		tt_die;
 	int32_t		tt_eat;
 	int32_t		tt_sleep;
-	u_int32_t	t_eaten;
 }	t_times;
 typedef struct s_philo
 {
@@ -48,6 +47,7 @@ typedef struct s_philo
 	pthread_t		th_id;
 	int32_t			last_eat;
 	u_int8_t		status;
+	u_int32_t		t_eaten;
 	bool			finished_eaten;
 	pthread_mutex_t	fork;
 	struct s_data	*g_data;
