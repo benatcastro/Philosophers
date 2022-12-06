@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:58:15 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 16:50:15 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:56:26 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,4 +74,3 @@ t_philo	*create_philo_node(u_int32_t id, t_data *data)
 	return (node);
 }
 
-// void	free_nodes(t_philo **head)

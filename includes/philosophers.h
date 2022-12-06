@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 15:18:22 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 16:55:22 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int32_t		get_time(void);
 bool		ft_check_args(int argc, char **argv, t_data *data);
 /*********PHILO LOGIC*******/
 
+void		free_mem(t_philo **head, t_data *data);
 void		*death_checker(void *data_ptr);
 void		stop_threads(t_philo **head);
 void		print_simulation_state(t_data *data, t_philo *philo);

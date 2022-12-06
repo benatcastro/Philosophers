@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:59:02 by bena              #+#    #+#             */
-/*   Updated: 2022/11/07 09:35:44 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/06 17:49:59 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,4 +45,22 @@ int	ft_atoi(const char *nptr)
 		i++;
 	}
 	return (nbr * sign);
+}
+
+void	free_mem(t_philo **head, t_data *data)
+{
+	t_philo	*aux;
+	t_philo	*temp;
+
+	(void)data;
+	aux = (*head);
+	while (aux)
+	{
+		temp = aux;
+		aux = aux->next;
+		free(temp);
+		if (aux == (*head))
+			break ;
+	}
+	//free(data->data_tv);
 }

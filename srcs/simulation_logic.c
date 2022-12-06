@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 16:44:01 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 17:31:17 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,18 +56,4 @@ void	*times_eaten_checker(void *data_ptr)
 	data->simulation_state = PHILO_EATEN;
 	print_simulation_state(data, NULL);
 	return (NULL);
-}
-
-void	stop_threads(t_philo **head)
-{
-	t_philo	*aux;
-
-	aux = (*head);
-	while (aux)
-	{
-		pthread_join(aux->th_id, NULL);
-		aux = aux->next;
-		if (aux == (*head))
-			exit(0);
-	}
 }
