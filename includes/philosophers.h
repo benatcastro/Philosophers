@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 15:16:52 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/06 15:18:22 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int			ft_atoi(const char *nptr);
 /********TIME FNCS***************/
 
 void		ft_usleep(u_int32_t msec);
-int32_t	get_time(void);
+int32_t		get_time(void);
 
 /***********ARGS*************/
 
