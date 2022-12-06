@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_logic.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/05 23:54:28 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/06 15:17:16 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	*death_checker(void *data_ptr)
 	aux = (*data->philo_lst);
 	while (aux)
 	{
-		if ((aux->last_eat - get_time()) >= data->data_tv->tt_die)
+		if ((aux->last_eat - get_time()) >= (int64_t)data->data_tv->tt_die)
 			break ;
 		aux = aux->next;
 	}

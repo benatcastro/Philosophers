@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   time.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:04:57 by becastro          #+#    #+#             */
-/*   Updated: 2022/11/07 09:00:12 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/06 15:16:38 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,11 @@ void	ft_usleep(u_int32_t msec)
  * @brief Updates the time in the data structure every milisec
  * @param data -> data struct
  */
-u_int32_t	get_time(void)
+int32_t	get_time(void)
 {
 	struct timeval		time;
 	static bool			check;
-	static u_int32_t	tmp;
+	static int32_t		tmp;
 
 	gettimeofday(&time, NULL);
 	if (!check)
