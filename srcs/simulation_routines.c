@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 19:28:56 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:48:15 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,7 @@ void	*init_routine(void *philosopher)
 
 	philo = philosopher;
 	if (philo->id % 2 == 0)
-	{
-		usleep(100);
-		// printf("%d ha dormido\n", philo->id);
-	}
+		ft_usleep(50);
 	while (philo->g_data->sim_running)
 	{
 		philo_eat(philo);
