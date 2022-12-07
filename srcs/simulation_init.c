@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:10:41 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/06 18:34:49 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:37:16 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void	init_treadhs(t_philo **head, t_data *data)
 		if (aux == (*head))
 			break ;
 	}
-	pthread_create(&death_th, NULL, death_checker, (void *)data);
-	pthread_create(&eatean_th, NULL, times_eaten_checker, (void *)data);
+	pthread_create(&death_th, NULL, death_checker, data);
+	pthread_create(&eatean_th, NULL, times_eaten_checker, data);
 	pthread_mutex_init(&data->printing, NULL);
 }
 
@@ -49,7 +49,7 @@ void	init_philos(t_data *data)
 	}
 	philo_head->prev = ft_philolast(philo_head);
 	ft_philolast(philo_head)->next = philo_head;
-	data->philo_lst = &philo_head;
+	data->philo_lst = philo_head;
 	data->sim_running = true;
 	init_treadhs(&philo_head, data);
 }

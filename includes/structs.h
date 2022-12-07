@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 16:41:08 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:34:51 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ typedef struct s_data
 	u_int8_t		simulation_state;
 	bool			must_eat;
 	bool			sim_running;
-	struct s_philo	**philo_lst;
+	struct s_philo	*philo_lst;
 	struct s_times	*data_tv;
 	u_int32_t		eat_times;
 	pthread_mutex_t	printing;
