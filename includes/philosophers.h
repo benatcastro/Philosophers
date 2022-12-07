@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 23:17:53 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/07 23:31:01 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,38 @@
 
 # define T_USLEEP 50
 
+<<<<<<< HEAD
+=======
+enum e_status
+{
+	EATING,
+	SLEEPING,
+	THINKING,
+	DEAD,
+};
+
+typedef struct s_philo
+{
+	u_int16_t		status;
+	u_int32_t		id;
+	bool			l_fork;
+	bool			r_fork;
+	struct s_philo	*next;
+}	t_philo;
+
+typedef struct s_data
+{
+	u_int32_t			time;
+	u_int32_t			n_philos;
+	u_int32_t			tt_die;
+	u_int32_t			tt_eat;
+	u_int32_t			tt_sleep;
+	u_int32_t			need_to_eat;
+	bool				must_eat;
+	struct s_philo		**philo_general;
+}	t_data;
+
+>>>>>>> 7cf60b3 (tests)
 /********LIBFT UTILS***************/
 
 void		print_list(t_philo **head);
