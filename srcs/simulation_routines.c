@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 18:55:29 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:28:56 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ void	philo_eat(t_philo *philo)
 	l_fork = pthread_mutex_lock(&philo->prev->fork);
 	if (!l_fork)
 		print_philo_status(philo, FORK);
-	if (r_fork && l_fork)
-	{
-		print_philo_status(philo, THINKING);
-		pthread_mutex_unlock(&philo->fork);
-		pthread_mutex_unlock(&philo->prev->fork);
-		return (philo_eat(philo));
-	}
+	// if (r_fork || l_fork)
+	// {
+	// 	print_philo_status(philo, THINKING);
+	// 	pthread_mutex_unlock(&philo->fork);
+	// 	pthread_mutex_unlock(&philo->prev->fork);
+	// 	return (philo_eat(philo));
+	// }
 	philo->last_eat = get_time();
 	philo->t_eaten++;
 	ft_usleep(philo->tv->tt_eat);
@@ -49,6 +49,11 @@ void	*init_routine(void *philosopher)
 	t_philo	*philo;
 
 	philo = philosopher;
+	if (philo->id % 2 == 0)
+	{
+		usleep(100);
+		// printf("%d ha dormido\n", philo->id);
+	}
 	while (philo->g_data->sim_running)
 	{
 		philo_eat(philo);

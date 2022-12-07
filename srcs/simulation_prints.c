@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/07 18:48:56 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 19:11:51 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,7 @@
 
 void	print_philo_status(t_philo *philo, u_int8_t status)
 {
-	if (philo->g_data->sim_running == true)
-		pthread_mutex_lock(&philo->g_data->printing);
-	else
-		return ;
+	pthread_mutex_lock(&philo->g_data->printing);
 	printf("%d %d ", get_time(), philo->id);
 	if (status == EATING)
 		printf("is eating\n");
