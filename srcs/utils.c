@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:59:02 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 23:19:13 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/07 23:28:51 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,12 +63,12 @@ void	free_mem(t_philo *head, t_data *data)
 {
 	t_philo	*aux;
 
-	(void)data;
-	while (head)
+	while (data->n_philos)
 	{
 		aux = head;
 		head = head->next;
 		free(aux);
+		data->n_philos--;
 	}
 	free(data->data_tv);
 }
