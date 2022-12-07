@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/07 18:43:20 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:48:56 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ void	print_philo_status(t_philo *philo, u_int8_t status)
 		printf("is sleeping\n");
 	else if (status == THINKING)
 		printf("is thinking\n");
+	else if (status == FORK)
+		printf("has taken a fork\n");
 	pthread_mutex_unlock(&philo->g_data->printing);
 }
 

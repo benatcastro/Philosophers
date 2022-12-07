@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 18:43:43 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:47:39 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ enum e_status
 	EATING,
 	SLEEPING,
 	THINKING,
-	TEST,
+	FORK,
 };
 
 enum e_sim_states
