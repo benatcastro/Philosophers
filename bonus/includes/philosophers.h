@@ -6,7 +6,7 @@
 /*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 23:17:53 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/08 00:05:59 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,9 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <sys/time.h>
+# include <sys/wait.h>
+# include <sys/stat.h>
+# include <semaphore.h>
 # include <stdbool.h>
 # include <unistd.h>
 # include <string.h>
