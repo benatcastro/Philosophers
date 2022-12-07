@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philosophers.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 18:46:35 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 23:17:53 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int32_t		get_time(void);
 bool		ft_check_args(int argc, char **argv, t_data *data);
 /*********PHILO LOGIC*******/
 
-void		free_mem(t_philo **head, t_data *data);
+void		free_mem(t_philo *head, t_data *data);
 void		*death_checker(void *data_ptr);
 void		stop_threads(t_philo **head);
 void		print_simulation_state(t_data *data, t_philo *philo);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:35:35 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 18:46:07 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 23:14:56 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,5 @@ int	main(int argc, char **argv)
 	init_philos(&data);
 	while (data.sim_running)
 		ft_usleep(1);
-	//free_mem(data.philo_lst, &data);
+	free_mem(data.philo_lst, &data);
 }
