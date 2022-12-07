@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   nodes.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:58:15 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 22:18:17 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/07 18:43:51 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,6 @@ t_philo	*create_philo_node(u_int32_t id, t_data *data)
 	node->tv = data->data_tv;
 	node->g_data = data;
 	node->finished_eaten = false;
-	node->status = TEST;
 	node->t_eaten = 0;
 	node->last_eat = 0;
 	return (node);

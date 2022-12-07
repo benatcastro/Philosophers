@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/06 18:20:03 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:46:35 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@
 # include <string.h>
 
 # define T_USLEEP 50
-
 
 /********LIBFT UTILS***************/
 
@@ -44,10 +43,9 @@ void		free_mem(t_philo **head, t_data *data);
 void		*death_checker(void *data_ptr);
 void		stop_threads(t_philo **head);
 void		print_simulation_state(t_data *data, t_philo *philo);
-void		print_philo_status(t_philo *philo);
+void		print_philo_status(t_philo *philo, u_int8_t status);
 void		init_philos(t_data *data);
 void		print_philos(t_data *data);
 void		*init_routine(void *philosopher);
-void		print_philo_status(t_philo *philo);
 void		*times_eaten_checker(void *data_ptr);
 #endif

@@ -6,26 +6,24 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/06 17:32:50 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:43:20 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers.h"
 
-void	print_philo_status(t_philo *philo)
+void	print_philo_status(t_philo *philo, u_int8_t status)
 {
 	if (philo->g_data->sim_running == true)
 		pthread_mutex_lock(&philo->g_data->printing);
 	else
 		return ;
 	printf("%d %d ", get_time(), philo->id);
-	if (philo->status == EATING)
-	{
+	if (status == EATING)
 		printf("is eating\n");
-	}
-	else if (philo->status == SLEEPING)
+	else if (status == SLEEPING)
 		printf("is sleeping\n");
-	else if (philo->status == THINKING)
+	else if (status == THINKING)
 		printf("is thinking\n");
 	pthread_mutex_unlock(&philo->g_data->printing);
 }
