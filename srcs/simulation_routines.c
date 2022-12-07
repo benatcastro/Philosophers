@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 18:54:33 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:55:29 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ void	philo_eat(t_philo *philo)
 	int	l_fork;
 
 	r_fork = pthread_mutex_lock(&philo->fork);
+	if (!r_fork)
+		print_philo_status(philo, FORK);
 	l_fork = pthread_mutex_lock(&philo->prev->fork);
+	if (!l_fork)
+		print_philo_status(philo, FORK);
 	if (r_fork && l_fork)
 	{
 		print_philo_status(philo, THINKING);
