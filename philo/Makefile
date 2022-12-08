@@ -6,13 +6,13 @@
 #    By: becastro <becastro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/12/08 16:20:39 by becastro         ###   ########.fr        #
+#    Updated: 2022/12/08 15:04:19 by becastro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME	= ../execs/philo_bonus
+NAME	= $(EXEC_DIR)/philo
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror $(SANITIZE)
+CFLAGS	= -Wall -Wextra -Werror #$(SANITIZE)
 
 #debug
 VALGRIND = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
@@ -24,15 +24,15 @@ INC_DIR		= includes/
 SRC_DIR		= srcs/
 OBJ_DIR		= ../objs/
 INC_FLAG	= -I $(INC_DIR)
-SRC_FILES	=	args_bonus					\
-				main_bonus					\
-				time_bonus					\
-				utils_bonus					\
-				nodes_bonus					\
-				simulation_routines_bonus	\
-				simulation_logic_bonus		\
-				simulation_init_bonus		\
-				simulation_prints_bonus		\
+SRC_FILES	=	args				\
+				main				\
+				time				\
+				utils				\
+				nodes				\
+				simulation_routines	\
+				simulation_logic	\
+				simulation_init		\
+				simulation_prints	\
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
@@ -49,16 +49,14 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(CFLAGS) $(INC_FLAG) -c $< -o $@
 
+
 clean:
 	rm -rf $(OBJ_DIR)
 
 fclean: clean
-	rm -f $(NAME)
+	rm -rf $(NAME)
 
 re: fclean all
-
-sanitize:
-	@$(CC) $(CFLAGS) $(SRC_DIR) $(SANITIZE) $(INC_DIR)*.c -o $(NAME)
 
 valgrind:
 	@$(VALGRIND) ./NAME
@@ -66,5 +64,7 @@ valgrind:
 run: all
 	@./$(NAME)
 
-.PHONY: all clean fclean re valgrin run
+
+
+.PHONY: all clean fclean re valgrind
 

@@ -7,11 +7,9 @@ clean:
 re:
 	make re --no-print-directory -C philo/
 
-clean:
-	make clean --no-print-directory -C philo/
-
 fclean:
 	make fclean --no-print-directory -C philo/
+
 bonus:
 	make --no-print-directory -C philo_bonus/
 

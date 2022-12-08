@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs_bonus.h                                    :+:      :+:    :+:   */
+/*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/08 16:34:49 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 18:47:39 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_BONUS_H
-# define STRUCTS_BONUS_H
+#ifndef STRUCTS_H
+# define STRUCTS_H
 
 /********DEFINES******/
 # include <stdlib.h>
 # include <stdbool.h>
 # include <pthread.h>
-# include "semaphore.h"
-
-# define SEM_CREATE_PROCESS "init_childs"
 
 enum e_status
 {
@@ -47,7 +44,7 @@ typedef struct s_times
 typedef struct s_philo
 {
 	u_int32_t		id;
-	pid_t			pid;
+	pthread_t		th_id;
 	int32_t			last_eat;
 	u_int32_t		t_eaten;
 	bool			finished_eaten;
@@ -59,7 +56,6 @@ typedef struct s_philo
 }	t_philo;
 typedef struct s_data
 {
-	sem_t			*sem_created_process;
 	u_int32_t		n_philos;
 	u_int32_t		eaten_philos;
 	u_int8_t		simulation_state;

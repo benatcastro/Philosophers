@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simulation_routines_bonus.c                        :+:      :+:    :+:   */
+/*   simulation_routines.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/08 16:42:53 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/07 23:23:48 by bena             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers_bonus.h"
+#include "philosophers.h"
 
 void	philo_eat(t_philo *philo)
 {
@@ -42,8 +42,6 @@ void	*init_routine(void *philosopher)
 	t_philo	*philo;
 
 	philo = philosopher;
-	printf("philo id: %d process created\n", philo->id);
-	sem_wait(philo->g_data->sem_created_process);
 	if (philo->id % 2 == 0)
 		ft_usleep(50);
 	while (philo->g_data->sim_running)
@@ -51,6 +49,5 @@ void	*init_routine(void *philosopher)
 		philo_eat(philo);
 		philo_sleep(philo);
 	}
-	exit(EXIT_SUCCESS);
 	return (NULL);
 }
