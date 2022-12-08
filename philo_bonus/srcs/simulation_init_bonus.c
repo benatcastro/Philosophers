@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   simulation_init.c                                  :+:      :+:    :+:   */
+/*   simulation_init_bonus.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:10:41 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/07 19:26:10 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:42:46 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philosophers.h"
-#include "nodes.h"
+#include "philosophers_bonus.h"
+#include "nodes_bonus.h"
 #include <pthread.h>
 
 void	init_treadhs(t_philo **head, t_data *data)
@@ -23,10 +23,6 @@ void	init_treadhs(t_philo **head, t_data *data)
 	aux = (*head);
 	while (aux)
 	{
-		if (pthread_create(&aux->th_id, NULL, init_routine, (void *)aux))
-			return ;
-		if (pthread_mutex_init(&aux->fork, NULL))
-			return ;
 		aux = aux->next;
 		if (aux == (*head))
 			break ;

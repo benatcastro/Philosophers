@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   nodes.c                                            :+:      :+:    :+:   */
+/*   nodes_bonus.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 20:58:15 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 18:43:51 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/08 14:38:22 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "nodes.h"
-#include "structs.h"
-#include "philosophers.h"
-#include <string.h>
-#include <stdio.h>
+#include "nodes_bonus.h"
+#include "structs_bonus.h"
+#include "philosophers_bonus.h"
 
 /*void	print_philos(t_data *data)
 {

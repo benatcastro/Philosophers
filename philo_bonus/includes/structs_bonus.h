@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   structs_bonus.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/08 00:04:08 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/08 14:44:25 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#ifndef STRUCTS_BONUS_H
+# define STRUCTS_BONUS_H
 
 /********DEFINES******/
 # include <stdlib.h>
@@ -44,7 +44,7 @@ typedef struct s_times
 typedef struct s_philo
 {
 	u_int32_t		id;
-
+	pid_t			pid;
 	int32_t			last_eat;
 	u_int32_t		t_eaten;
 	bool			finished_eaten;
