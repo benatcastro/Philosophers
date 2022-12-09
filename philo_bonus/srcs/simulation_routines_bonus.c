@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 19:11:77 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:48:41 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	philo_eat(t_philo *philo)
 	print_philo_status(philo, FORK);
 	philo->last_eat = get_time();
 	philo->t_eaten++;
+	if (philo->t_eaten == philo->g_data->eat_times)
+		sem_post(philo->g_data->eat_sem);
 	ft_usleep(philo->tv->tt_eat);
 	print_philo_status(philo, EATING);
 	sem_post(philo->g_data->forks);
@@ -35,8 +37,8 @@ void	philo_sleep(t_philo *philo)
 void	*init_routine(void *philosopher)
 {
 	t_philo		*philo;
-	pthread_t	eatean_th;
 	pthread_t	death_th;
+	pthread_t	eaten_th;
 
 	philo = philosopher;
 	sem_wait(philo->g_data->init_childs);
@@ -45,7 +47,7 @@ void	*init_routine(void *philosopher)
 		ft_usleep(50);
 	gettimeofday(&philo->philo_time, NULL);
 	pthread_create(&death_th, NULL, death_checker, philo);
-	pthread_create(&eatean_th, NULL, times_eaten_checker, philo->g_data);
+	pthread_create(&eaten_th, NULL, times_eaten_checker, philo);
 	while (true)
 	{
 		philo_eat(philo);

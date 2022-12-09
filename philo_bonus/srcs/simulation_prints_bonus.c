@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/09 18:52:07 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:42:31 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,5 @@ void	print_simulation_state(t_data *data, t_philo *philo)
 			philo->id, get_time_diff(data->g_time));
 	sem_post(data->sim_running);
 	sem_wait(data->global_prints);
+	exit(EXIT_SUCCESS);
 }

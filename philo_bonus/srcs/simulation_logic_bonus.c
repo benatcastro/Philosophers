@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 20:33:52 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 19:13:24 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:49:28 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,23 @@ void	*death_checker(void *philo_ptr)
 
 void	*times_eaten_checker(void *data_ptr)
 {
-	t_data		*data;
-	t_philo		*aux;
-	u_int32_t	philo_counter;
+	t_philo				*philo;
+	static u_int32_t	philos_eaten;
 
-	data = (t_data *)data_ptr;
-	philo_counter = data->n_philos;
-	aux = (data->philo_lst);
-	if (!data->must_eat)
+	philo = (t_philo *)data_ptr;
+	if (!philo->g_data->must_eat)
 		return (NULL);
-	ft_usleep(50);
-	while (aux)
+	while (true)
 	{
-		if (aux->t_eaten == data->eat_times && !aux->finished_eaten)
+		sem_wait(philo->g_data->eat_sem);
+		philos_eaten++;
+		if (philo->g_data->n_philos >= philos_eaten)
 		{
-			aux->finished_eaten = true;
-			data->eaten_philos++;
+			philo->g_data->simulation_state = PHILO_EATEN;
+			print_simulation_state(philo->g_data, NULL);
 		}
-		if (data->eaten_philos == philo_counter)
-			break ;
-		aux = aux->next;
+		else
+			sem_post(philo->g_data->eat_sem);
 	}
-	data->simulation_state = PHILO_EATEN;
-	print_simulation_state(data, NULL);
 	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 19:14:10 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:19:06 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,6 +62,7 @@ typedef struct s_data
 	sem_t			*global_prints;
 	sem_t			*printing;
 	sem_t			*sim_running;
+	sem_t			*eat_sem;
 	u_int32_t		eaten_philos;
 	u_int32_t		n_philos;
 	u_int8_t		simulation_state;

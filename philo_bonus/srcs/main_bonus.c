@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:35:35 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 18:56:28 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:51:05 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int	main(int argc, char **argv)
 {
-	t_data	*data;
+	t_data		*data;
 
 	data = malloc(sizeof(t_data));
 	memset(data, 0, sizeof(t_data));
@@ -25,6 +25,8 @@ int	main(int argc, char **argv)
 		return (free(data->data_tv), free(data), EXIT_FAILURE);
 	sem_unlink(SEM_SIM_RUNNING);
 	data->sim_running = sem_open(SEM_SIM_RUNNING, O_CREAT, SEM_PERMS, 0);
+	sem_unlink(SEM_EATEN);
+	data->eat_sem = sem_open(SEM_EATEN, O_CREAT, SEM_PERMS, 0);
 	init_philos(data);
 	sem_wait(data->sim_running);
 	kill_child_process(data);

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:59:02 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 15:02:25 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:50:13 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	print_list(t_philo **head)
 	aux = (*head);
 	while (aux)
 	{
-		printf("id: %d\n", aux->id);
+		printf("id: %d eaten: %d\n", aux->id, aux->t_eaten);
 		aux = aux->next;
 	}
 }
