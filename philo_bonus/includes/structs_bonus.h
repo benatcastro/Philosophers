@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/08 16:34:49 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:49:37 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 # include <pthread.h>
 # include "semaphore.h"
 
-# define SEM_CREATE_PROCESS "init_childs"
 
 enum e_status
 {
@@ -59,7 +58,7 @@ typedef struct s_philo
 }	t_philo;
 typedef struct s_data
 {
-	sem_t			*sem_created_process;
+	sem_t			*init_childs;
 	u_int32_t		n_philos;
 	u_int32_t		eaten_philos;
 	u_int8_t		simulation_state;

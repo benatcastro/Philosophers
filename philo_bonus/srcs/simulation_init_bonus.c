@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:10:41 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/08 16:42:57 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:52:10 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	init_treadhs(t_philo **head, t_data *data)
 	pthread_t	death_th;
 
 	sem_unlink(SEM_CREATE_PROCESS);
-	data->sem_created_process = sem_open(SEM_CREATE_PROCESS, O_CREAT, 0644, 0);
+	data->init_childs = sem_open(SEM_CREATE_PROCESS, O_CREAT, SEM_PERMS, 0);
 	aux = (*head);
 	while (aux)
 	{
@@ -33,7 +33,7 @@ void	init_treadhs(t_philo **head, t_data *data)
 		if (aux == (*head))
 			break ;
 	}
-	// sem_post(data->sem_created_process);
+	sem_post(data->init_childs);
 	pthread_create(&death_th, NULL, death_checker, data);
 	pthread_create(&eatean_th, NULL, times_eaten_checker, data);
 	pthread_mutex_init(&data->printing, NULL);

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/08 14:47:04 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:52:06 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@
 # include <string.h>
 
 # define T_USLEEP 50
-
+# define SEM_CREATE_PROCESS "init_childs"
+# define SEM_PERMS 0644
 /********LIBFT UTILS***************/
 
 void		print_list(t_philo **head);

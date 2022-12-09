@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/08 16:42:53 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/08 16:49:09 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	*init_routine(void *philosopher)
 	t_philo	*philo;
 
 	philo = philosopher;
-	printf("philo id: %d process created\n", philo->id);
-	sem_wait(philo->g_data->sem_created_process);
+	sem_wait(philo->g_data->init_childs);
+	sem_post(philo->g_data->init_childs);
 	if (philo->id % 2 == 0)
 		ft_usleep(50);
 	while (philo->g_data->sim_running)
