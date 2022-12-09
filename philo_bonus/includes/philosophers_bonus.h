@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/08 16:52:06 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 12:56:58 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,5 @@ void		init_philos(t_data *data);
 void		print_philos(t_data *data);
 void		*init_routine(void *philosopher);
 void		*times_eaten_checker(void *data_ptr);
+void		kill_child_process(t_data *data);
 #endif
