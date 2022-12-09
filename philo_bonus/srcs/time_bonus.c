@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:04:57 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/08 14:39:08 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 15:00:17 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static	u_int32_t	get_time_diff(struct timeval __time)
 	gettimeofday(&diff, NULL);
 	time = (__time.tv_sec * 1000 + __time.tv_usec / 1000);
 	diff_time = (diff.tv_sec * 1000 + diff.tv_usec / 1000);
-	return (time - diff_time);
+	return (diff_time - time);
 }
 
 void	ft_usleep(u_int32_t msec)
