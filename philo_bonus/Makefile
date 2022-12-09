@@ -6,13 +6,13 @@
 #    By: becastro <becastro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/12/09 12:40:58 by becastro         ###   ########.fr        #
+#    Updated: 2022/12/09 15:37:12 by becastro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= ../execs/philo_bonus
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror $(SANITIZE)
+CFLAGS	= -Wall -Wextra -Werror #$(SANITIZE)
 
 #debug
 VALGRIND = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
