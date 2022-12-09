@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/26 01:59:02 by bena              #+#    #+#             */
-/*   Updated: 2022/12/08 14:39:16 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 15:02:25 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,4 +71,5 @@ void	free_mem(t_philo *head, t_data *data)
 		data->n_philos--;
 	}
 	free(data->data_tv);
+	free(data);
 }
