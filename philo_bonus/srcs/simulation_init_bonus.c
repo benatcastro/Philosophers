@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 11:10:41 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/09 13:00:29 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:04:45 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,17 @@
 void	init_treadhs(t_philo **head, t_data *data)
 {
 	t_philo		*aux;
-	pthread_t	eatean_th;
-	pthread_t	death_th;
 
+	sem_unlink(SEM_PRINT_STATS);
+	data->printing = sem_open(SEM_PRINT_STATS, O_CREAT, SEM_PERMS, 1);
+	sem_unlink(SEM_PRINT);
+	data->global_prints = sem_open(SEM_PRINT, O_CREAT, SEM_PERMS, 0);
 	sem_unlink(SEM_CREATE_PROCESS);
 	data->init_childs = sem_open(SEM_CREATE_PROCESS, O_CREAT, SEM_PERMS, 0);
+	sem_unlink(SEM_FORKS);
+	data->forks = sem_open(SEM_FORKS, O_CREAT, SEM_PERMS, data->n_philos);
 	aux = (*head);
+	gettimeofday(&data->g_time, NULL);
 	while (aux)
 	{
 		aux->pid = fork();
@@ -34,9 +39,6 @@ void	init_treadhs(t_philo **head, t_data *data)
 			break ;
 	}
 	sem_post(data->init_childs);
-	pthread_create(&death_th, NULL, death_checker, data);
-	pthread_create(&eatean_th, NULL, times_eaten_checker, data);
-	pthread_mutex_init(&data->printing, NULL);
 }
 
 void	init_philos(t_data *data)
@@ -55,6 +57,5 @@ void	init_philos(t_data *data)
 	philo_head->prev = ft_philolast(philo_head);
 	ft_philolast(philo_head)->next = philo_head;
 	data->philo_lst = philo_head;
-	data->sim_running = true;
 	init_treadhs(&philo_head, data);
 }

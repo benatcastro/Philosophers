@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 12:56:58 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:04:06 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,17 @@
 # include <stdbool.h>
 # include <unistd.h>
 # include <string.h>
+# include <signal.h>
 
 # define T_USLEEP 50
-# define SEM_CREATE_PROCESS "init_childs"
 # define SEM_PERMS 0644
+/********SEMAPHORES****************/
+# define SEM_SIM_RUNNING	"sim_running"
+# define SEM_CREATE_PROCESS	"init_childs"
+# define SEM_FORKS			"sem_forks"
+# define SEM_PRINT			"print_sem"
+# define SEM_PRINT_STATS	"print_stats"
+# define SEM_EATEN			"sem_eaten"
 /********LIBFT UTILS***************/
 
 void		print_list(t_philo **head);
@@ -54,4 +61,5 @@ void		print_philos(t_data *data);
 void		*init_routine(void *philosopher);
 void		*times_eaten_checker(void *data_ptr);
 void		kill_child_process(t_data *data);
+u_int64_t	get_time_diff(struct timeval __time);
 #endif

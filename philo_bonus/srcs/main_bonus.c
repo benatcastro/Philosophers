@@ -6,11 +6,12 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:35:35 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 15:05:18 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 18:56:28 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers_bonus.h"
+#include <signal.h>
 
 int	main(int argc, char **argv)
 {
@@ -22,8 +23,11 @@ int	main(int argc, char **argv)
 	data->philo_lst = NULL;
 	if (!ft_check_args(argc, argv, data))
 		return (free(data->data_tv), free(data), EXIT_FAILURE);
+	sem_unlink(SEM_SIM_RUNNING);
+	data->sim_running = sem_open(SEM_SIM_RUNNING, O_CREAT, SEM_PERMS, 0);
 	init_philos(data);
-	while (data->sim_running)
-		ft_usleep(1);
+	sem_wait(data->sim_running);
+	kill_child_process(data);
 	free_mem(data->philo_lst, data);
+	exit(EXIT_SUCCESS);
 }

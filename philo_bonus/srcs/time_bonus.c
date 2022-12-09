@@ -6,17 +6,17 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:04:57 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/09 15:00:17 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 18:56:41 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philosophers_bonus.h"
 
-static	u_int32_t	get_time_diff(struct timeval __time)
+u_int64_t	get_time_diff(struct timeval __time)
 {
 	struct timeval	diff;
-	u_int32_t		time;
-	u_int32_t		diff_time;
+	u_int64_t		time;
+	u_int64_t		diff_time;
 
 	gettimeofday(&diff, NULL);
 	time = (__time.tv_sec * 1000 + __time.tv_usec / 1000);

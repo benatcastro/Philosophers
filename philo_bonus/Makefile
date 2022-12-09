@@ -6,13 +6,13 @@
 #    By: becastro <becastro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/12/09 15:37:12 by becastro         ###   ########.fr        #
+#    Updated: 2022/12/09 18:16:36 by becastro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= ../execs/philo_bonus
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror #$(SANITIZE)
+CFLAGS	= -Wall -Wextra -Werror -g3 #$(SANITIZE)
 
 #debug
 VALGRIND = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
@@ -33,7 +33,6 @@ SRC_FILES	=	args_bonus					\
 				simulation_logic_bonus		\
 				simulation_init_bonus		\
 				simulation_prints_bonus		\
-				simulation_process_bonus	\
 
 SRC = $(addprefix $(SRC_DIR), $(addsuffix .c, $(SRC_FILES)))
 OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))

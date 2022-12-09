@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/08 16:49:37 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/09 19:14:10 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
 # include <stdbool.h>
 # include <pthread.h>
 # include "semaphore.h"
-
 
 enum e_status
 {
@@ -50,7 +49,7 @@ typedef struct s_philo
 	int32_t			last_eat;
 	u_int32_t		t_eaten;
 	bool			finished_eaten;
-	pthread_mutex_t	fork;
+	struct timeval	philo_time;
 	struct s_data	*g_data;
 	struct s_times	*tv;
 	struct s_philo	*next;
@@ -59,15 +58,18 @@ typedef struct s_philo
 typedef struct s_data
 {
 	sem_t			*init_childs;
-	u_int32_t		n_philos;
+	sem_t			*forks;
+	sem_t			*global_prints;
+	sem_t			*printing;
+	sem_t			*sim_running;
 	u_int32_t		eaten_philos;
+	u_int32_t		n_philos;
 	u_int8_t		simulation_state;
 	bool			must_eat;
-	bool			sim_running;
+	struct timeval	g_time;
 	struct s_philo	*philo_lst;
 	struct s_times	*data_tv;
 	u_int32_t		eat_times;
-	pthread_mutex_t	printing;
 }	t_data;
 
 #endif
