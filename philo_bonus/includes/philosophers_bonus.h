@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:29:12 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 19:04:06 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/10 10:41:39 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,17 @@
 # include <signal.h>
 
 # define T_USLEEP 50
-# define SEM_PERMS 0644
+/********PRINT ARGS***************/
+# define ARG1 "[number of philosophers]"
+# define ARG2 "[time to die]"
+# define ARG3 "[time to eat]"
+# define ARG4 "[time to sleep]"
+# define ARG5 "[numbers of times that each philo has to eat]"
+/********PRINT COLORS***************/
+# define CBOLD	"\e[1m"
+# define CRESET	"\e[m"
 /********SEMAPHORES****************/
+# define SEM_PERMS 0644
 # define SEM_SIM_RUNNING	"sim_running"
 # define SEM_CREATE_PROCESS	"init_childs"
 # define SEM_FORKS			"sem_forks"

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 21:35:35 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 15:05:09 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/10 10:40:50 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@ int	main(int argc, char **argv)
 {
 	t_data	*data;
 
+	if (argc == 1)
+		return (printf("%sThe program arguments are: %s %s %s %s %s%s\n",
+				CBOLD, ARG1, ARG2, ARG3, ARG4, ARG5, CRESET));
 	data = malloc(sizeof(t_data));
 	memset(data, 0, sizeof(t_data));
 	data->data_tv = malloc(sizeof(t_times));
