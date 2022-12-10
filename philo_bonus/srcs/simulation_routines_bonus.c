@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 19:48:41 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/10 11:23:26 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ void	philo_eat(t_philo *philo)
 	print_philo_status(philo, FORK);
 	sem_wait(philo->g_data->forks);
 	print_philo_status(philo, FORK);
+	ft_usleep(philo->tv->tt_eat);
 	philo->last_eat = get_time();
 	philo->t_eaten++;
 	if (philo->t_eaten == philo->g_data->eat_times)
 		sem_post(philo->g_data->eat_sem);
-	ft_usleep(philo->tv->tt_eat);
 	print_philo_status(philo, EATING);
 	sem_post(philo->g_data->forks);
 	sem_post(philo->g_data->forks);
@@ -52,6 +52,7 @@ void	*init_routine(void *philosopher)
 	{
 		philo_eat(philo);
 		philo_sleep(philo);
+		print_philo_status(philo, THINKING);
 	}
 	exit(EXIT_SUCCESS);
 	return (NULL);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   simulation_routines.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: bena <bena@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/07 23:23:48 by bena             ###   ########.fr       */
+/*   Updated: 2022/12/10 11:23:37 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	philo_eat(t_philo *philo)
 	l_fork = pthread_mutex_lock(&philo->prev->fork);
 	if (!l_fork)
 		print_philo_status(philo, FORK);
+	ft_usleep(philo->tv->tt_eat);
 	philo->last_eat = get_time();
 	philo->t_eaten++;
-	ft_usleep(philo->tv->tt_eat);
 	print_philo_status(philo, EATING);
 	pthread_mutex_unlock(&philo->fork);
 	pthread_mutex_unlock(&philo->prev->fork);
@@ -48,6 +48,7 @@ void	*init_routine(void *philosopher)
 	{
 		philo_eat(philo);
 		philo_sleep(philo);
+		print_philo_status(philo, THINKING);
 	}
 	return (NULL);
 }
