@@ -6,7 +6,7 @@
 #    By: becastro <becastro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/12/09 18:16:36 by becastro         ###   ########.fr        #
+#    Updated: 2022/12/10 12:14:21 by becastro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,7 +40,6 @@ OBJS = $(addprefix $(OBJ_DIR), $(addsuffix .o, $(SRC_FILES)))
 
 all: $(NAME)
 
-
 $(NAME): $(OBJS)
 	mkdir -p $(EXEC_DIR)
 	$(CC) $(CFLAGS) $(OBJS) $(INC_FLAG) -o $(NAME)
@@ -54,6 +53,7 @@ clean:
 
 fclean: clean
 	rm -f $(NAME)
+	rm -rf $(EXEC_DIR)
 
 re: fclean all
 

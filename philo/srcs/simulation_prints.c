@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/07 19:11:51 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/10 11:34:43 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,16 @@ void	print_simulation_state(t_data *data, t_philo *philo)
 	pthread_mutex_lock(&data->printing);
 	if (data->simulation_state == PHILO_EATEN)
 	{
-		printf("Simulation ended, all philos have eaten %d times\n",
-			data->eat_times);
+		printf("%sSimulation ended, all philos have eaten %d times%s\n",
+			CBOLD, data->eat_times, CRESET);
 		data->sim_running = false;
 	}
 	if (data->simulation_state == PHILO_DIED)
 	{
-		printf("Simulation ended, philo %d died at time %d\n",
-			philo->id, get_time());
+		if (data->simulation_state == PHILO_DIED)
+			printf("%s%d %d has%s %sdied%s\n",
+				CBOLD, get_time(), philo->id,
+				CRESET, BRED, CRESET);
 		data->sim_running = false;
 	}
 }

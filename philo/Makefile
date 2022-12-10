@@ -6,13 +6,13 @@
 #    By: becastro <becastro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/12/08 17:06:04 by becastro         ###   ########.fr        #
+#    Updated: 2022/12/10 12:13:44 by becastro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= $(EXEC_DIR)/philo
 CC		= gcc
-CFLAGS	= -Wall -Wextra -Werror #$(SANITIZE)
+CFLAGS	= -Wall -Wextra -Werror  #$(SANITIZE)
 
 #debug
 VALGRIND = valgrind --leak-check=full --show-leak-kinds=all --track-origins=yes
@@ -55,6 +55,7 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	rm -rf $(EXEC_DIR)
 
 re: fclean all
 
