@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:09:42 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/10 11:02:35 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/10 11:24:21 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ bool	ft_check_args(int argc, char **argv, t_data *data)
 			("%sError:%s %sthere muest be at least 1 philosopher ❌%s\n",
 				BRED, CRESET, CBOLD, CRESET), false);
 	if (argc != 5 && argc != 6)
-		return (printf("%sError:%s invalid arg count ❌%s\n",
+		return (printf("%sError:%s %sinvalid arg count ❌%s\n",
 				BRED, CRESET, CBOLD, CRESET), false);
 	if (argc == 6)
 		must_eat = true;

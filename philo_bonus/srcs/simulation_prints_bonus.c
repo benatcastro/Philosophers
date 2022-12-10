@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:28:19 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/09 19:42:31 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/10 11:31:13 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,12 @@ void	print_simulation_state(t_data *data, t_philo *philo)
 {
 	sem_wait(data->printing);
 	if (data->simulation_state == PHILO_EATEN)
-		printf("Simulation ended, all philos have eaten %d times\n",
-			data->eat_times);
+		printf("%sSimulation ended, all philos have eaten %d times%s\n",
+			CBOLD, data->eat_times, CRESET);
 	if (data->simulation_state == PHILO_DIED)
-		printf("Simulation ended, philo %d died at time %llu\n",
-			philo->id, get_time_diff(data->g_time));
+		printf("%s%llu %d has%s %sdied%s\n",
+			CBOLD, get_time_diff(data->g_time), philo->id,
+			CRESET, BRED, CRESET);
 	sem_post(data->sim_running);
 	sem_wait(data->global_prints);
 	exit(EXIT_SUCCESS);
