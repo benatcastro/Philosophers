@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/01 08:09:42 by becastro          #+#    #+#             */
-/*   Updated: 2022/12/08 14:37:55 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/10 10:59:40 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,8 @@ static bool	ft_check_chars(char **argv)
 		{
 			if (!ft_isdigit(argv[i][j]))
 			{
-				printf("Error, arg number %d has invalid characters ❌\n", i);
+				printf("%sError:%s %sarg number %d has invalid characters ❌%s\n",
+					BRED, CRESET, CBOLD, i, CRESET);
 				return (false);
 			}
 		}
@@ -53,9 +54,11 @@ bool	ft_check_args(int argc, char **argv, t_data *data)
 
 	if (ft_atoi(argv[1]) <= 0)
 		return ((void)printf
-			("Error, there muest be at least 1 philosopher ❌\n"), false);
+			("%sError:%s %sthere muest be at least 1 philosopher ❌%s\n",
+				BRED, CRESET, CBOLD, CRESET), false);
 	if (argc != 5 && argc != 6)
-		return (printf("Error, invalid arg count ❌\n"), false);
+		return (printf("%sError:%s %sinvalid arg count ❌%s\n",
+				BRED, CRESET, CBOLD, CRESET), false);
 	if (argc == 6)
 		must_eat = true;
 	else
