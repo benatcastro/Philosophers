@@ -6,7 +6,7 @@
 #    By: becastro <becastro@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/29 21:01:08 by becastro          #+#    #+#              #
-#    Updated: 2022/12/10 12:51:18 by becastro         ###   ########.fr        #
+#    Updated: 2022/12/10 13:29:05 by becastro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ $(OBJ_DIR)%.o: $(SRC_DIR)%.c
 
 clean:
 	@rm -rf $(OBJ_DIR)
-	@printf "$(B_RED)Cleaning$(NC) $(B_WHT) objs\n"
+	@printf "$(B_RED)Removing$(NC)$(B_WHT) binary files\n"
 
 fclean: clean
 	@rm -rf $(NAME)
@@ -64,12 +64,8 @@ fclean: clean
 
 re: fclean all
 
-valgrind:
-	@$(VALGRIND) ./NAME
 
-run: all
-	@./$(NAME)
-
+#colors
 BLK	=	\e[0;30m
 RED	=	\e[0;31m
 GRN	=	\e[0;32m
@@ -89,5 +85,5 @@ B_CYN	=	\e[1;36m
 B_WHT	=	\e[1;37m
 NC	=	\e[0m
 
-.PHONY: all clean fclean re valgrind
+.PHONY: all clean fclean
 

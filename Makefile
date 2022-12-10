@@ -1,3 +1,5 @@
+.SILENT:
+
 all:
 	make --no-print-directory -C philo/
 
@@ -22,7 +24,7 @@ clean_bonus:
 
 fclean_bonus:
 	make fclean --no-print-directory -C philo_bonus
-	rm -rf execs/
 
 fclean_all: fclean fclean_bonus
-	rm -rf execs/
+
+.PHONY: all clean re fclean bonus re_bonus clean_bonus fclean_bonus fclean_all
