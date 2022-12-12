@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/10 11:23:37 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/13 00:53:07 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ void	philo_eat(t_philo *philo)
 	l_fork = pthread_mutex_lock(&philo->prev->fork);
 	if (!l_fork)
 		print_philo_status(philo, FORK);
+	print_philo_status(philo, EATING);
 	ft_usleep(philo->tv->tt_eat);
 	philo->last_eat = get_time();
 	philo->t_eaten++;
-	print_philo_status(philo, EATING);
 	pthread_mutex_unlock(&philo->fork);
 	pthread_mutex_unlock(&philo->prev->fork);
 }
