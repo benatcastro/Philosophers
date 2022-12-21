@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/07 09:09:25 by bena              #+#    #+#             */
-/*   Updated: 2022/12/13 00:52:42 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:17:36 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	*init_routine(void *philosopher)
 	sem_post(philo->g_data->init_childs);
 	if (philo->id % 2 == 0)
 		ft_usleep(50);
-	gettimeofday(&philo->philo_time, NULL);
 	pthread_create(&death_th, NULL, death_checker, philo);
 	pthread_create(&eaten_th, NULL, times_eaten_checker, philo);
 	while (true)

@@ -6,7 +6,7 @@
 /*   By: becastro <becastro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/05 21:00:49 by bena              #+#    #+#             */
-/*   Updated: 2022/12/09 19:19:06 by becastro         ###   ########.fr       */
+/*   Updated: 2022/12/21 17:17:43 by becastro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,6 @@ typedef struct s_philo
 	int32_t			last_eat;
 	u_int32_t		t_eaten;
 	bool			finished_eaten;
-	struct timeval	philo_time;
 	struct s_data	*g_data;
 	struct s_times	*tv;
 	struct s_philo	*next;
